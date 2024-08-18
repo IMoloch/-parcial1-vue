@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 6</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+  <!-- Se manda a llamar el div con el ID del montado -->
+  <div id="app">
+    <h1>Calculadora</h1>
+    <div>
+      <!-- Con v-model linkeamos el valor del input a ambos números -->
+      <input v-model="numero1" placeholder="Primer número..."> <br>
+      <input v-model="numero2" placeholder="Segundo número..."> <br>
+    </div>
+    <br>
+    <div>
+      <!-- Con v-model linkeamos el valor del input a la variable operación -->
+      <select v-model="operacion">
+        <option disabled value="">Selecciona la operación</option>
+        <option value="Suma">Suma</option>
+        <option value="Resta">Resta</option>
+        <option value="Multiplicación">Multiplicación</option>
+        <option value="División">División</option>
+      </select>
+    </div>
+    <br>
+    <div>
+      <!-- Utilizamos el manejador de eventos @ para saber cuando se pulsa el boton -->
+      <button @click="calculate(operacion, numero1, numero2)"> Calcular </button>
+    </div>
+    <!-- El resultado solo se muestra si esta definido y tiene un valor -->
+    <div v-if="resultado !== null && resultado !== undefined">
+      <p>Resultado: {{ resultado ?? null}}</p>
+    </div>
+  </div>
+</body>
+<script src="ejercicio6.js"></script>
+
+</html>

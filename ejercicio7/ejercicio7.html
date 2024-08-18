@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ejercicio 4</title>
+  <title>Ejercicio 7</title>
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-</head>
+  <style>
+    /* Estilos para el tema claro */
+    body.light-theme {
+      background-color: white;
+      color: black;
+    }
 
+    /* Estilos para el tema oscuro */
+    body.dark-theme {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
 <body>
   <!-- Se manda a llamar el div con el ID del montado -->
   <div id="app">
-    <h1>Input Component</h1>
     <!-- Llamamos al componente con el nombre asignado en el archivo.js -->
-    <input-button></input-button>
+    <theme-switcher></theme-switcher>
   </div>
 </body>
-<script src="ejercicio4.js"></script>
+<script src="ejercicio7.js"></script>
 </html>

@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 2</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
+    <!-- Se manda a llamar el div con el ID del montado -->
     <div id="app">
         <h1>Contador</h1>
+        <!-- Utilizamos @click para manejar el evento de cuando se pulsa el botón -->
         <button @click="counting"><h3>{{ count }}</h3></button>
         <button @click="resetCount">Reset</button>
     </div>
 </body>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="ejercicio2.js"></script>
 </html>

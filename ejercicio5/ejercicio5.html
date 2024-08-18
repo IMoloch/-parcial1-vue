@@ -4,17 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Ejercicio 5</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
+  <!-- Se manda a llamar el div con el ID del montado -->
   <div id="app">
     <h1>Task List</h1>
+    <!-- Con v-model linkeamos el valor del input a la variable newTask -->
+    <input v-model="newTask" placeholder="Agrega una tarea...">
+    <!-- Utilizamos el manejador de eventos @ para saber cuando se pulsa el boton -->
+    <button @click="addTask"> Agregar Tarea </button>
     <ol>
-        <li v-for="task of taskList"> {{task}}</li>
+      <!-- Con un v-for recorremos la Lista de tareas -->
+      <li v-for="(task, index) in taskList" :key="index"> {{ task }}
+        <button @click="removeTask(index)">Eliminar Tarea</button>
+      </li>
     </ol>
   </div>
 </body>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="ejercicio5.js"></script>
+
 </html>
